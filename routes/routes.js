@@ -1,10 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const inventoryController = require("../controllers/inventoryController");
 
-router.get("/", (req, res) => {
-    res.render("index", {
-        title: "Gunsmith",
-    });
-});
+router.get("/", inventoryController.classListGet);
 
 module.exports = router;

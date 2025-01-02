@@ -5,7 +5,15 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <h2> Page under construction! </h2>
-        <h4> Please do visit later! </h4>
+        <h2> GUNSMITH </h2>
+        <div class="container">
+            <% for (let i=0; i < data.length; i++) { %>
+                <div>
+                    <a href="/">
+                        <%= data[i] %>
+                    </a>
+                </div>
+            <% } %>
+        </div>
     </body>
 </html>
