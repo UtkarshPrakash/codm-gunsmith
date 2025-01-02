@@ -1,10 +1,14 @@
+const db = require("../db/queries");
+
 weaponClass = ['AR', 'SMG', 'Sniper'];
 
-const classListGet = (req, res) => {
+const typeListGet = async (req, res) => {
+    const typeData = await db.getAllTypes();
+    const types = typeData.map(type => type.type);
     res.render("index", {
         title: "Gunsmith",
-        data: weaponClass,
+        data: types,
     });
 };
 
-module.exports = { classListGet };
+module.exports = { typeListGet };

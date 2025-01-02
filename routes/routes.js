@@ -2,6 +2,6 @@ const express = require("express");
 const router = express.Router();
 const inventoryController = require("../controllers/inventoryController");
 
-router.get("/", inventoryController.classListGet);
+router.get("/", inventoryController.typeListGet);
 
 module.exports = router;
