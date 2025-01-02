@@ -11,4 +11,14 @@ const typeListGet = async (req, res) => {
     });
 };
 
-module.exports = { typeListGet };
+const weaponListByType = async (req, res) => {
+    const selectedType = req.params.weaponType;
+    const weapData = await db.getAllWeapons(selectedType);
+    const weapons = weapData.map(w => w.name);
+    res.render("weapons", {
+        title: selectedType,
+        data: weapons
+    });
+}
+
+module.exports = { typeListGet, weaponListByType };

@@ -10,7 +10,7 @@ async function getAllWeapons(type) {
         select *
         from inventory
         where type = ($1);
-    `, [`%${type}%`]);
+    `, [type]);
     return rows;
 }
 
