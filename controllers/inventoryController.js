@@ -13,8 +13,7 @@ const typeListGet = async (req, res) => {
 
 const weaponListByType = async (req, res) => {
     const selectedType = req.params.weaponType;
-    const weapData = await db.getAllWeapons(selectedType);
-    const weapons = weapData.map(w => w.name);
+    const weapons = await db.getAllWeapons(selectedType);
     res.render("weapons", {
         title: selectedType,
         data: weapons

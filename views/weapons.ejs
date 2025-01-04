@@ -9,8 +9,8 @@
         <div class="container">
             <% for (let i=0; i < data.length; i++) { %>
                 <div class="weapon">
-                    <%= data[i] %>
-                    <button class="gunsmith-btn" onclick="showDetails('<%= data[i] %>')"> Gunsmith </button>
+                    <%= data[i].name %>
+                    <button class="gunsmith-btn" onclick="showDetails('<%= JSON.stringify(data[i]) %>')"> Gunsmith </button>
                 </div>
             <% } %>
         </div>
@@ -20,6 +20,8 @@
             <div class="dialog-content" onclick="event.stopPropagation()">
                 <span class="close-btn" onclick="closeDialog()"> &times; </span>
                 <h2 id="weapon-name"></h2>
+                <div id="setup-options"></div>
+                <img id="gunsmith-img" class="setup-img" alt="Image of gunsmith setup">
             </div>
          </div>
         
