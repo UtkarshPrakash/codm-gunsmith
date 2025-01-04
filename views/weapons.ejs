@@ -2,16 +2,27 @@
 <html>
     <head>
         <title> <%= title %> </title>
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="/style.css">
     </head>
     <body>
         <h2> GUNSMITH </h2>
         <div class="container">
             <% for (let i=0; i < data.length; i++) { %>
-                <div>
+                <div class="weapon">
                     <%= data[i] %>
+                    <button class="gunsmith-btn" onclick="showDetails('<%= data[i] %>')"> Gunsmith </button>
                 </div>
             <% } %>
         </div>
+
+        <!-- Dialog Box -->
+         <div id="weapon-dialog" class="dialog hidden" onclick="closeDialog()">
+            <div class="dialog-content" onclick="event.stopPropagation()">
+                <span class="close-btn" onclick="closeDialog()"> &times; </span>
+                <h2 id="weapon-name"></h2>
+            </div>
+         </div>
+        
+        <script src="/script.js"></script>
     </body>
 </html>
