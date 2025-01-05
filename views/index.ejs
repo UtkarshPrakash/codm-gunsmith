@@ -5,15 +5,18 @@
         <link rel="stylesheet" href="/style.css">
     </head>
     <body>
-        <h2> GUNSMITH </h2>
+        <div class="page-header">
+            <img src="/CODM_Logo.svg">
+            <div> GUNSMITH </div>
+        </div>
         <div class="container">
             <% for (let i=0; i < data.length; i++) { %>
-                <div>
-                    <a href="/type/<%= data[i] %>">
-                        <%= data[i] %>
-                    </a>
+                <div class="tile" onclick="window.location.href='/type/<%= data[i] %>'">
+                    <img src="https://img.freepik.com/free-photo/close-up-gun-surrounded-by-bullets_23-2150803606.jpg?semt=ais_hybrid">
+                    <div> <%= data[i] %> </div>
                 </div>
             <% } %>
         </div>
+        <div class="footer"></div>
     </body>
 </html>

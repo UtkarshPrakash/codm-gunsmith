@@ -5,12 +5,16 @@
         <link rel="stylesheet" href="/style.css">
     </head>
     <body>
-        <h2> GUNSMITH </h2>
+        <div class="page-header">
+            <img src="/CODM_Logo.svg">
+            <div> <%= title %> </div>
+        </div>
         <div class="container">
             <% for (let i=0; i < data.length; i++) { %>
-                <div class="weapon">
-                    <%= data[i].name %>
-                    <button class="gunsmith-btn" onclick="showDetails('<%= JSON.stringify(data[i]) %>')"> Gunsmith </button>
+                <div class="tile" onclick="showDetails('<%= JSON.stringify(data[i]) %>')">
+                    <img src="https://img.freepik.com/free-photo/close-up-gun-surrounded-by-bullets_23-2150803606.jpg?semt=ais_hybrid">
+                    <div> <%= data[i].name %> </div>
+                    <!-- <button class="gunsmith-btn"> Gunsmith </button> -->
                 </div>
             <% } %>
         </div>
@@ -18,13 +22,14 @@
         <!-- Dialog Box -->
          <div id="weapon-dialog" class="dialog hidden" onclick="closeDialog()">
             <div class="dialog-content" onclick="event.stopPropagation()">
-                <span class="close-btn" onclick="closeDialog()"> &times; </span>
                 <h2 id="weapon-name"></h2>
                 <div id="setup-options"></div>
                 <img id="gunsmith-img" class="setup-img" alt="Image of gunsmith setup">
             </div>
          </div>
-        
+
+        <div class="footer"></div>
+
         <script src="/script.js"></script>
     </body>
 </html>

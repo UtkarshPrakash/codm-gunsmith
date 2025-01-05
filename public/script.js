@@ -1,6 +1,6 @@
 function showDetails(data_string) {
     obj = JSON.parse(data_string);
-    document.querySelector('#weapon-name').textContent = `Name: ${obj.name}`;
+    document.querySelector('#weapon-name').textContent = `${obj.name}`;
 
     showGunsmith = (link) => document.querySelector("#gunsmith-img").src = link;
     showGunsmith(obj.mp_setup1);
@@ -38,6 +38,10 @@ function showDetails(data_string) {
 function closeDialog() {
     const dialog = document.querySelector("#weapon-dialog");
     dialog.style.display = 'none';
+    const setupButtons = document.querySelector("#setup-options");
+    while (setupButtons.firstChild) {
+        setupButtons.removeChild(setupButtons.firstChild);
+      }
 }
 
 document.addEventListener('keydown', (event) => {

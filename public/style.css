@@ -1,5 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    background-color: black;
+    color: white;
+    font-family: "Raleway", serif;
+    font-size: 2em;
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
-    background-color: rgb(66, 72, 95);
+    margin: 0px;
+    padding: 0px;
+}
+
+.page-header {
+    height: 1.8em;
+    color: black;
+    align-content: center;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 800;
+    display: flex;
+    padding-top: 30px;
+}
+
+.page-header > div {
+    background-color: #FFFF03;
+    align-content: center;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.page-header > img {
+    align-self: center;
+    height: 1.6em;
+    background-color: black;
+    margin: 4px;
+}
+
+.container {
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tile {
+    width: 8em;
+    height: 8em;
+    background-color: black;
+    border-radius: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+.tile:hover {
+    background-color: rgb(34, 57, 57);
+    color: #FFFF03;
+    font-weight: 600;
+    box-shadow: #FFFF03 0px 1px;
+    cursor: pointer;
+}
+
+.tile > img {
+    object-fit: contain;
+    border-radius: 20px;
+    background-color: rgb(24, 37, 37);
+    padding:10px;
+    box-shadow: rgba(222, 213, 43, 0.2) 0px 7px 29px 0px;
+}
+
+.tile > div {
+    margin: 10px;
+    text-align: center;
+    font-size: 80%;
+}
+
+.gunsmith-btn {
+    background-color: rgb(73, 73, 73);
 }
 
 /* Dialog Box */
@@ -16,21 +101,57 @@ body {
 }
 
 .dialog-content {
-    background: white;
+    background: rgb(50, 50, 50);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 300px;
+    width: 80vh;
+    height: 80vh;
 }
 
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 20px;
+#setup-options {
+    height: 2em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.setup-button {
+    background-color: rgb(40, 35, 35);
+    width: 10em;
+    font-size: 0.8em;
+    padding: 4px;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    font-weight: 500;
+    align-items: center;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
     cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
+    display: inline-flex;
+    fill: currentcolor;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    justify-content: center;
+    overflow: visible;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform,opacity;
+    z-index: 0;}
+
+.setup-button:hover {
+    background: #737373;
+    color: #f3ef88;
+}
+  
+.setup-button:active {
+    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+    outline: none;
 }
 
 .hidden {
@@ -38,5 +159,16 @@ body {
 }
 
 .setup-img {
-    width: 5em;
+    width: 100%;
 }
+
+.footer {
+    /* position: fixed; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(43, 43, 43);
+    height: 10vh;
+    border-top:rgba(40, 246, 250, 0.289) solid 2px;
+}
+
