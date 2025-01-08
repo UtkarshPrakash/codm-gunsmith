@@ -44,6 +44,10 @@ function closeDialog() {
       }
 }
 
+function goHome () {
+    window.location.href = "/";
+};
+
 document.addEventListener('keydown', (event) => {
     if (event.key == 'Escape') {
         closeDialog();

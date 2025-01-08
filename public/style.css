@@ -34,6 +34,7 @@ body {
     padding: 30px;
     display: flex;
     align-items: center;
+    font-size: smaller;
 }
 
 .page-header > img {
@@ -41,13 +42,18 @@ body {
     height: 1.6em;
     background-color: black;
     margin: 4px;
+    cursor: pointer;
 }
 
 .container {
     padding: 2em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-self: center;
+    gap: 5%;
+    width: 60%;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-around; */
 }
 
 .tile {
